@@ -1,3 +1,5 @@
+[![Github Actions CI/CD](https://github.com/vlademirjunior/RESTfulJava/actions/workflows/continuous-deployment.yml/badge.svg)](https://github.com/vlademirjunior/RESTfulJava/actions/workflows/continuous-deployment.yml)
+
 # RESTfulJava API
 
 This project implements a robust, secure, and modern **RESTful API** using **Java 21** and the **Spring Boot 3** ecosystem. The architecture strongly emphasizes advanced REST principles, utilizing **HATEOAS** and the **HAL (Hypertext Application Language)** format for resource linking. Security is managed by **Spring Security** using **JWT (JSON Web Tokens)**, and the API supports multi-content negotiation (JSON, XML, YAML).
