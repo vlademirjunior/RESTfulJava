@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:15.10
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - restfuljava-network
+    environment:
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_USER: username
+      POSTGRES_DB: restful_java
+      TZ: America/Sao_Paulo
+      PGTZ: America/Sao_Paulo
+
+  restful-java:
+    image: vlademirdocker/restful-java
+    restart: always
+    build: .
+    working_dir: .
+    environment:
+      TZ: America/Sao_Paulo
+      SPRING.DATASOURCE.URL: jdbc:postgresql://db:5432/restful_java
+      SPRING.DATASOURCE.USERNAME: username
+      SPRING.DATASOURCE.PASSWORD: admin123
+    command: mvn spring-boot:run
+    ports:
+      - 80:80
+    depends_on:
+      - db
+    networks:
+      - restfuljava-network
+
+volumes:
+  postgres-data:
+
+
+networks:
+  restfuljava-network:
+    driver: bridge
