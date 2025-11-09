@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 8080
 cors:
   originPatterns: http://localhost:8080,http://localhost:3000,https://www.restfuljava.com.br
 file:
@@ -18,7 +18,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/restful_java
-    username: root
+    username: username
     password: admin123
   jpa:
     hibernate:
